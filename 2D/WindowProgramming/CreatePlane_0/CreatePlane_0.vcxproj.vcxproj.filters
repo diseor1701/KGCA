@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Sample.cpp" />
+    <ClCompile Include="CDevice.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CInput.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CWindow.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CWriterFont.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TDxObject.cpp" />
+    <ClCompile Include="T_Math.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CStd.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CDevice.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CInput.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CWindow.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CWriterFont.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TDxObject.h" />
+    <ClInclude Include="T_Math.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{6c048fa3-a4e1-4f83-abf9-ad1d175bb8f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL">
+      <UniqueIdentifier>{66d5466f-a183-442d-88b7-ebc837a9e9ef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="VS.txt">
+      <Filter>HLSL</Filter>
+    </Text>
+    <Text Include="PS.txt">
+      <Filter>HLSL</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
