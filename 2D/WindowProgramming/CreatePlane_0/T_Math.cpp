@@ -1,6 +1,7 @@
 #include "T_Math.h"
 namespace T_Math
 {
+    FVector2 FVector2::ZeroVector2(0.0f, 0.0f);
     FVector2 T_Math::FVector2::operator+(const FVector2& v) const
     {
         return FVector2(X + v.X, Y + v.Y);

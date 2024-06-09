@@ -60,6 +60,8 @@ bool  CDevice::CreateDevice(HWND hWnd)
 
 	}
 
+	SetViewport();
+
 	if (g_pContext != nullptr)
 	{
 		g_pContext->OMSetRenderTargets(1, &g_pRTV, nullptr);
@@ -88,4 +90,15 @@ void  CDevice::DeleteDevice()
 		g_pRTV->Release();
 		g_pRTV = nullptr;
 	}
+}
+
+void CDevice::SetViewport()
+{
+	m_ViewPort.TopLeftX = 0;
+	m_ViewPort.TopLeftY = 0;
+	m_ViewPort.Width = m_xWindowSize;
+	m_ViewPort.Height = m_yWindowSize;
+	m_ViewPort.MinDepth = 0;
+	m_ViewPort.MaxDepth = 1;
+	g_pContext->RSSetViewports(1, &m_ViewPort);
 }

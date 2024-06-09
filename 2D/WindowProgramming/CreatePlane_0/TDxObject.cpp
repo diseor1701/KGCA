@@ -2,7 +2,13 @@
 
 TDxObject& TDxObject::Move(float dx, float dy)
 {
-    // TODO: 여기에 return 문을 삽입합니다.
+    m_vList[0].v.X = m_vList[0].v.X + dx;
+    m_vList[0].v.Y = m_vList[0].v.Y + dy;
+    m_vList[1].v.X = m_vList[1].v.X + dx;
+    m_vList[1].v.Y = m_vList[1].v.Y + dy;
+    m_vList[2].v.X = m_vList[2].v.X + dx;
+    m_vList[2].v.Y = m_vList[2].v.Y + dy;
+    return *this;
 }
 
 bool TDxObject::CreateVertexBuffer(ID3D11Device* pd3dDevice)
@@ -169,4 +175,4 @@ void TDxObject::Release()
         m_pVertexLayout = nullptr;
     }
 }
-}
+

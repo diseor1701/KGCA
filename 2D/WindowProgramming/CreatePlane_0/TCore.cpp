@@ -25,6 +25,9 @@ void  TCore::GamePreRender()
 {
 	float clearColor[] = { 0.3640f, 0.4543545322f, 0.645672321f, 1.0f };
 	g_pContext->ClearRenderTargetView(g_pRTV, clearColor);
+
+	g_pContext->OMSetRenderTargets(1, &g_pRTV, nullptr);
+	g_pContext->RSSetViewports(1, &m_ViewPort);
 }
 void  TCore::GamePostRender()
 {

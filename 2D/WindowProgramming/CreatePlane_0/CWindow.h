@@ -7,6 +7,8 @@ public:
 	HINSTANCE	m_hInstance;
 	HWND		m_hWnd;
 	bool		m_isActive;
+	UINT		m_xWindowSize;
+	UINT		m_yWindowSize;
 
 public:
 	void CreateRegisterClass(HINSTANCE hInstance);
