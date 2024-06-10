@@ -96,8 +96,8 @@ void CDevice::SetViewport()
 {
 	m_ViewPort.TopLeftX = 0;
 	m_ViewPort.TopLeftY = 0;
-	m_ViewPort.Width = m_xWindowSize;
-	m_ViewPort.Height = m_yWindowSize;
+	m_ViewPort.Width = m_xClientSize;
+	m_ViewPort.Height = m_yClientSize;
 	m_ViewPort.MinDepth = 0;
 	m_ViewPort.MaxDepth = 1;
 	g_pContext->RSSetViewports(1, &m_ViewPort);

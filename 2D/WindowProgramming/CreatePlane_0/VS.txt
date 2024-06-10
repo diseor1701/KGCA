@@ -1,6 +1,6 @@
-// Á¤Á¡½¦ÀÌ´õ ¹İÈ¯°ªÀÌ ¹«Á¶°Ç float4 Çü ÀÌ¾î¾ß ÇÑ´Ù.
-// ½Ã¸àÆ½(ÀÇ¹Ì±¸Á¶) : SV_POSITION, POSITION)
-float4 VSMain(float2 p : POS) : SV_POSITION
+// ì •ì ì‰ì´ë” ë°˜í™˜ê°’ì´ ë¬´ì¡°ê±´ float4 í˜• ì´ì–´ì•¼ í•œë‹¤.
+// ì‹œë©˜í‹±(ì˜ë¯¸êµ¬ì¡°) : SV_POSITION, POSITION) 
+float4 VSMain( float2 p : POS) : SV_POSITION
 {
-	return float4(p.x, p.y, 0.5f, 1.0f);
+  return float4(p.x,p.y,0.5f,1.0f);
 }

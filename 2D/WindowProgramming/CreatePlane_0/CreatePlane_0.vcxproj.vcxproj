@@ -50,6 +50,7 @@
     <ProjectGuid>{F787DEDC-B950-44EB-860D-AFA0E8B818EB}</ProjectGuid>
     <RootNamespace>CreateDevice</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CreatePlane_0</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

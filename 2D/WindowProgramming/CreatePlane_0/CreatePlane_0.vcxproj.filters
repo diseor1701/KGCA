@@ -1,6 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+<<<<<<< HEAD
+    <ClInclude Include="TMath.h" />
+    <ClInclude Include="..\CreateWriter\CDevice.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CreateWriter\CInput.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CreateWriter\CWindow.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CreateWriter\CTimer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CreateWriter\TCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CreateWriter\CWriterFont.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CreateWriter\CStd.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TMath.cpp" />
+    <ClCompile Include="Sample.cpp" />
+    <ClCompile Include="..\CreateWriter\CDevice.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CreateWriter\CInput.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CreateWriter\CWindow.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CreateWriter\CTimer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CreateWriter\TCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CreateWriter\CWriterFont.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{d5056f93-6711-4f0c-89db-f4d2fc3ed4e7}</UniqueIdentifier>
+    </Filter>
+=======
     <ClCompile Include="Sample.cpp" />
     <ClCompile Include="CWindow.cpp" />
     <ClCompile Include="CDevice.cpp" />
@@ -12,5 +63,6 @@
     <ClInclude Include="CDevice.h" />
     <ClInclude Include="CInput.h" />
     <ClInclude Include="CTimer.h" />
+>>>>>>> 1d474c7d4bd0b6a895c5173847821b261736e49d
   </ItemGroup>
 </Project>
