@@ -8,12 +8,12 @@ class CDevice : public CWindow
 public:
 	// 인터페이스 획득(할당, 생성)
 	// 할당, 생성
-	ComPtr<ID3D11Device> g_pd3dDevice = nullptr;
+	ComPtr<ID3D11Device> m_pd3dDevice = nullptr;
 	// 관리, 운영
-	ID3D11DeviceContext* g_pContext = nullptr;
+	ID3D11DeviceContext* m_pContext = nullptr;
 
-	IDXGISwapChain* g_pSwapChain = nullptr;
-	ID3D11RenderTargetView* g_pRTV = nullptr;
+	IDXGISwapChain* m_pSwapChain = nullptr;
+	ID3D11RenderTargetView* m_pRTV = nullptr;
 
 	D3D11_VIEWPORT	m_ViewPort;
 public:

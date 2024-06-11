@@ -27,17 +27,17 @@ public:
 		//objScreen.m_vList[0].v = T_Math::FVector2(0.0f, 0.0f);
 		//objScreen.m_vList[1].v = T_Math::FVector2(800.0f, 0.0f);
 		//objScreen.m_vList[2].v = T_Math::FVector2(800.0f, 600.0f);
-		if (objScreen.CreateVertexBuffer(g_pd3dDevice) == false)
+		if (objScreen.CreateVertexBuffer(m_pd3dDevice) == false)
 		{
 			objScreen.Release();
 			return;
 		}
-		if (objScreen.LoadShader(g_pd3dDevice) == false)
+		if (objScreen.LoadShader(m_pd3dDevice) == false)
 		{
 			objScreen.Release();
 			return;
 		}
-		if (objScreen.CreateInputLayout(g_pd3dDevice) == false)
+		if (objScreen.CreateInputLayout(m_pd3dDevice) == false)
 		{
 			objScreen.Release();
 			return;
@@ -78,18 +78,18 @@ public:
 		m_ViewPort.TopLeftY = 0;
 		m_ViewPort.Width = m_xClientSize / 2;
 		m_ViewPort.Height = m_yClientSize / 2;
-		g_pContext->RSSetViewports(1, &m_ViewPort);
-		objScreen.Render(g_pContext);
+		m_pContext->RSSetViewports(1, &m_ViewPort);
+		objScreen.Render(m_pContext);
 
 		m_ViewPort.TopLeftX = m_xClientSize / 2;
 		m_ViewPort.TopLeftY = 0;
-		g_pContext->RSSetViewports(1, &m_ViewPort);
-		g_pContext->Draw(objScreen.m_vList.size(), 0);
+		m_pContext->RSSetViewports(1, &m_ViewPort);
+		m_pContext->Draw(objScreen.m_vList.size(), 0);
 
 		m_ViewPort.TopLeftX = 0;
 		m_ViewPort.TopLeftY = m_yClientSize / 2;
-		g_pContext->RSSetViewports(1, &m_ViewPort);
-		g_pContext->Draw(objScreen.m_vList.size(), 0);
+		m_pContext->RSSetViewports(1, &m_ViewPort);
+		m_pContext->Draw(objScreen.m_vList.size(), 0);
 
 		/*m_ViewPort.TopLeftX = _xWindowSize / 2;
 		m_ViewPort.TopLeftY = m_yWindowSize / 2;

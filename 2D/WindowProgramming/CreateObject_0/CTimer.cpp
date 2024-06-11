@@ -1,4 +1,5 @@
 #include "CTimer.h"
+double   g_fSecondPerFrame = 0.0f;
 
 void CTimer::DebugTimer()
 {
@@ -29,6 +30,8 @@ void CTimer::Frame()
 	m_dwSecondPerFrame = m_dwCurrentTimeTick - m_dwpreTimeTick;
 	m_fSecondPerFrame = m_dwSecondPerFrame / 1000.0f;
 	m_fGameTimeTick += m_fSecondPerFrame;
+
+	g_fSecondPerFrame = m_fSecondPerFrame;
 
 	fSecondTime += m_fSecondPerFrame;
 	if (fSecondTime >= 1.0f)

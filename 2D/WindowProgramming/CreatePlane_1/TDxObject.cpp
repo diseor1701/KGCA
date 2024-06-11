@@ -52,16 +52,16 @@ bool TDxObject::LoadShader(ID3D11Device* pd3dDevice)
         "vs_5_0", // dx11 정점쉐이더 컴파일러
         0,
         0,
-        &VS_ByteCode,
+        &VS_Bytecode,
         &errormsg
     );
 
     if(FAILED(hr)) return false;
 
     // 오브젝트 파일의 시작주소
-    const void* pShaderBytecode = VS_ByteCode->GetBufferPointer();
+    const void* pShaderBytecode = VS_Bytecode->GetBufferPointer();
     // 오브젝트 파일의 크기
-    SIZE_T BytecodeLength = VS_ByteCode->GetBufferSize();
+    SIZE_T BytecodeLength = VS_Bytecode->GetBufferSize();
 
     hr = pd3dDevice->CreateVertexShader(pShaderBytecode, BytecodeLength, nullptr, &m_pVertexShader);
 
@@ -80,7 +80,7 @@ bool TDxObject::LoadShader(ID3D11Device* pd3dDevice)
         "ps_5_0", // dx11 픽셀쉐이더 컴파일러
         0,
         0,
-        &PS_ByteCode,
+        &PS_Bytecode,
         &errormsg
     );
     if (FAILED(hr))
@@ -91,10 +91,10 @@ bool TDxObject::LoadShader(ID3D11Device* pd3dDevice)
         return false;
     }
 
-    pShaderBytecode = PS_ByteCode->GetBufferPointer();
-    BytecodeLength = PS_ByteCode->GetBufferSize();
-    hr = pd3dDevice->CreatePixelShader(PS_ByteCode->GetBufferPointer(),
-        PS_ByteCode->GetBufferSize(), nullptr, &m_pPixelShader);
+    pShaderBytecode = PS_Bytecode->GetBufferPointer();
+    BytecodeLength = PS_Bytecode->GetBufferSize();
+    hr = pd3dDevice->CreatePixelShader(PS_Bytecode->GetBufferPointer(),
+        PS_Bytecode->GetBufferSize(), nullptr, &m_pPixelShader);
     if (FAILED(hr)) return false;
 
     return true;
@@ -124,8 +124,8 @@ bool TDxObject::CreateInputLayout(ID3D11Device* pd3dDevice)
     HRESULT hr = pd3dDevice->CreateInputLayout(
         layout,
         NumElements,
-        VS_ByteCode->GetBufferPointer(),
-        VS_ByteCode->GetBufferSize(),
+        VS_Bytecode->GetBufferPointer(),
+        VS_Bytecode->GetBufferSize(),
         &m_pVertexLayout);
     if (FAILED(hr))
     {
@@ -154,15 +154,15 @@ void TDxObject::Render(ID3D11DeviceContext* pContext)
 
 void TDxObject::Release()
 {
-    if (VS_ByteCode)
+    if (VS_Bytecode)
     {
-        VS_ByteCode->Release();
-        VS_ByteCode = nullptr;
+        VS_Bytecode->Release();
+        VS_Bytecode = nullptr;
     }
-    if (PS_ByteCode)
+    if (PS_Bytecode)
     {
-        PS_ByteCode->Release();
-        PS_ByteCode = nullptr;
+        PS_Bytecode->Release();
+        PS_Bytecode = nullptr;
     }
 
     if (m_pVertexBuffer)

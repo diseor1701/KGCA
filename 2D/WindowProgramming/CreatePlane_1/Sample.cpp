@@ -21,7 +21,7 @@ public:
 	{
 		HRESULT hr =
 			DirectX::CreateWICTextureFromFile(
-				g_pd3dDevice,
+				m_pd3dDevice,
 				L"bk.jpg",
 				&m_pTexture,
 				&m_pSRV);
@@ -75,17 +75,17 @@ public:
 			v.Y = v.Y * 0.5f + 0.5f;*/
 		}
 
-		if (objScreen.CreateVertexBuffer(g_pd3dDevice) == false)
+		if (objScreen.CreateVertexBuffer(m_pd3dDevice) == false)
 		{
 			objScreen.Release();
 			return;
 		}
-		if (objScreen.LoadShader(g_pd3dDevice) == false)
+		if (objScreen.LoadShader(m_pd3dDevice) == false)
 		{
 			objScreen.Release();
 			return;
 		}
-		if (objScreen.CreateInputLayout(g_pd3dDevice) == false)
+		if (objScreen.CreateInputLayout(m_pd3dDevice) == false)
 		{
 			objScreen.Release();
 			return;
@@ -117,15 +117,15 @@ public:
 		float fLength3 = v3.Length();
 		T_Math::FVector2 vNormalize = v1.Normalize();
 		float fLength4 = vNormalize.Length();*/
-
+		4068
 		int k = 0;
 	}
 	void Render() override
 	{
 		// 0번 슬롯으로 텍스처 전달
-		g_pContext->PSSetShaderResources(0, 1, &m_pSRV);
+		m_pContext->PSSetShaderResources(0, 1, &m_pSRV);
 		//Texture2D g_txTexture : register(t0);
-		objScreen.Render(g_pContext);
+		objScreen.Render(m_pContext);
 	}
 	void   Release() override
 	{

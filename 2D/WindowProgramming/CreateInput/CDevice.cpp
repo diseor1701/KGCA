@@ -26,10 +26,10 @@ bool  CDevice::CreateDevice(HWND hWnd)
 		D3D11_SDK_VERSION,
 		&pSwapChainDesc,
 
-		&g_pSwapChain,
-		&g_pd3dDevice,
+		&m_pSwapChain,
+		&m_pd3dDevice,
 		nullptr,
-		&g_pContext);
+		&m_pContext);
 
 	if (FAILED(hr))
 	{
@@ -37,17 +37,17 @@ bool  CDevice::CreateDevice(HWND hWnd)
 	}
 
 	//ID3D11RenderTargetView* g_pRTV = nullptr;
-	if (g_pd3dDevice != nullptr && g_pSwapChain != nullptr)
+	if (m_pd3dDevice != nullptr && m_pSwapChain != nullptr)
 	{
 		ID3D11Texture2D* pBackBuffer = nullptr;
-		g_pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
+		m_pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
 
 		ID3D11Resource* pResource = pBackBuffer;
 		D3D11_RENDER_TARGET_VIEW_DESC* pDesc = nullptr;
-		hr = g_pd3dDevice->CreateRenderTargetView(
+		hr = m_pd3dDevice->CreateRenderTargetView(
 			pResource,
 			pDesc,
-			&g_pRTV);
+			&m_pRTV);
 		if (FAILED(hr))
 		{
 			return false;
@@ -57,24 +57,24 @@ bool  CDevice::CreateDevice(HWND hWnd)
 
 	}
 
-	if (g_pContext != nullptr)
+	if (m_pContext != nullptr)
 	{
-		g_pContext->OMSetRenderTargets(1, &g_pRTV, nullptr);
+		m_pContext->OMSetRenderTargets(1, &m_pRTV, nullptr);
 	}
 	return true;
 }
 void  CDevice::DeleteDevice()
 {
-	if (g_pSwapChain)g_pSwapChain->Release();
-	if (g_pd3dDevice)g_pd3dDevice->Release();
-	if (g_pContext)g_pContext->Release();
-	if (g_pRTV)g_pRTV->Release();
+	if (m_pSwapChain)m_pSwapChain->Release();
+	if (m_pd3dDevice)m_pd3dDevice->Release();
+	if (m_pContext)m_pContext->Release();
+	if (m_pRTV)m_pRTV->Release();
 }
 
 void   CDevice::GameRun()
 {
 	float clearColor[] = { 0.0f, 0.0f, 1.0f, 1.0f };
-	g_pContext->ClearRenderTargetView(g_pRTV, clearColor);
+	m_pContext->ClearRenderTargetView(m_pRTV, clearColor);
 
-	g_pSwapChain->Present(0, 0);
+	m_pSwapChain->Present(0, 0);
 }

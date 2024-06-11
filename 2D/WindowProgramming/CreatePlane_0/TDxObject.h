@@ -25,8 +25,8 @@ public:
 
 	ID3D11VertexShader* m_pVertexShader = nullptr;
 	ID3D11PixelShader* m_pPixelShader = nullptr;
-	ID3DBlob* VS_ByteCode = nullptr; // 오프젝트 파일
-	ID3DBlob* PS_ByteCode = nullptr; // 오프젝트 파일
+	ID3DBlob* VS_Bytecode = nullptr; // 오프젝트 파일
+	ID3DBlob* PS_Bytecode = nullptr; // 오프젝트 파일
 	bool	LoadShader(ID3D11Device* pd3dDevice);
 
 	ID3D11InputLayout* m_pVertexLayout = nullptr;
